@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryTracker", "Invento
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryTrackerTests", "InventoryTrackerTests\InventoryTrackerTests.csproj", "{C9F71934-5D1D-4208-A82B-6453919C0B42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryTrackerRESTAPI", "InventoryTrackerRESTAPI\InventoryTrackerRESTAPI.csproj", "{E9782376-F7BF-4A89-BD54-2635901A734B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{C9F71934-5D1D-4208-A82B-6453919C0B42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9F71934-5D1D-4208-A82B-6453919C0B42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9F71934-5D1D-4208-A82B-6453919C0B42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9782376-F7BF-4A89-BD54-2635901A734B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9782376-F7BF-4A89-BD54-2635901A734B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9782376-F7BF-4A89-BD54-2635901A734B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9782376-F7BF-4A89-BD54-2635901A734B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
