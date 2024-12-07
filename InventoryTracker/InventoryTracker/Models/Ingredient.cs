@@ -25,8 +25,8 @@ namespace InventoryTracker.Models
         public double ReorderPoint { get; set; }
         public string? Notes { get; set; }
 
-        public virtual IngredientType IngredientType { get; set; } = null!;
-        public virtual UnitType UnitType { get; set; } = null!;
+        public virtual IngredientType? IngredientType { get; set; } = null!;
+        public virtual UnitType? UnitType { get; set; } = null!;
         public virtual Adjunct? Adjunct { get; set; }
         public virtual Fermentable? Fermentable { get; set; }
         public virtual Hop? Hop { get; set; }
