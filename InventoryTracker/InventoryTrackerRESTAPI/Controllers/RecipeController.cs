@@ -39,7 +39,13 @@ namespace InventoryTrackerAPI.Controllers
           {
               return NotFound();
           }
-            var recipe = await _context.Recipes.FindAsync(id);
+            var recipe = await _context.Recipes.Include(
+                r => r.RecipeIngredients).ThenInclude(
+                ri => ri.Ingredient).ThenInclude(
+                i => i.IngredientInventoryAdditions).Include(
+                r => r.Batches).ThenInclude(
+                b => b.Products).SingleOrDefaultAsync(
+                r => r.RecipeId == id);
 
             if (recipe == null)
             {
