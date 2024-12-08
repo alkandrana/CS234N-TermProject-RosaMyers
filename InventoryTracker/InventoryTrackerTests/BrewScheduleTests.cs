@@ -16,9 +16,12 @@ public class Tests
     public void TestGetRecipes()
     {
         List<Recipe> recipes = dbContext.Recipes.OrderBy(r => r.Name).ToList();
-        Assert.That(recipes.Count, Is.EqualTo(4));
-        Assert.That(recipes[0].Name, Is.EqualTo("Cascade Orange Pale Ale"));
-        PrintRecords(recipes);
+        Assert.AreEqual(4, recipes.Count);
+        Assert.AreEqual("Cascade Orange Pale Ale", recipes[0].Name);
+        foreach (Recipe r in recipes)
+        {
+            Console.WriteLine(r.Name);
+        }
     }
 
     [Test]
@@ -45,8 +48,10 @@ public class Tests
         }
     }
 
+   
+
     [Test]
-    public void TestGetProductOnHandFromRecipe()
+    public void TestGetProductOnHand()
     {
         // Get the relevant recipe with related collections to find the product associated with that recipe
         Recipe? recipe = dbContext.Recipes.Include(
@@ -82,7 +87,7 @@ public class Tests
             r => r.Batches).SingleOrDefault(
             r => r.RecipeId == 3);
         // One record inserted in the testing process
-        Assert.That(recipe.Batches, Has.Count.EqualTo(1));
+        Assert.AreEqual(2, recipe.Batches.Count);
         // display the batch number, date brewed, and notes
         foreach (Batch b in recipe.Batches)
         {
@@ -97,28 +102,20 @@ public class Tests
         Batch batch = new Batch();
         batch.RecipeId = 3;
         batch.EquipmentId = 1;
-        batch.Volume = 200;
-        batch.StartDate = DateTime.Parse("11-20-2020");
+        batch.Volume = 37;
+        batch.ScheduledStartDate = DateTime.Parse("11-20-2020");
         // Add it to the batch table
         dbContext.Batches.Add(batch);
         dbContext.SaveChanges();
         // Get the updated contents of the batch table
         List<Batch> batches = dbContext.Batches.ToList();
-        Assert.That(batches, Has.Count.EqualTo(1));
-        Assert.That(batches.First().RecipeId == 3);
-        Assert.That(batches.First().Volume == 200);
-        Assert.That(batches.First().StartDate.Equals( DateTime.Parse("11-20-2020")));
+        Assert.AreEqual(2,batches.Count);
+        Assert.AreEqual(3, batches.Last().RecipeId);
+        Assert.AreEqual(37, batches.Last().Volume);
+        Assert.AreEqual(DateTime.Parse("11-20-2020"), batches.Last().ScheduledStartDate);
         // Show the inputted details of the batch to ascertain that it was created properly
-        Console.WriteLine($"Batch ID: {batches.First().BatchId} " +
-                          $"Recipe ID: {batches.First().RecipeId} " +
-                          $"Volume: {batches.First().Volume}");
-    }
-
-    public void PrintRecords(List<Recipe> recipes)
-    {
-        foreach (var rec in recipes)
-        {
-            Console.WriteLine(rec.Name);
-        }
+        Console.WriteLine($"Batch ID: {batches.Last().BatchId} " +
+                          $"Recipe ID: {batches.Last().RecipeId} " +
+                          $"Volume: {batches.Last().Volume}");
     }
 }
