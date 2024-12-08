@@ -4,14 +4,6 @@ using InventoryTracker.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-// Add CORS policy - in a production app lock this down!
-/*builder.Services.AddCors(options =>
-{
-    options.AddDefaultPolicy(builder =>
-    {
-        builder.AllowAnyOrigin().WithMethods("Post", "Put", "Delete", "Get", "options").AllowAnyHeader();
-    });
-});*/
 // Adding the DbContext to the service
 builder.Services.AddDbContext<InventoryTrackerContext>();
 
