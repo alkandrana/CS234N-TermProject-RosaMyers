@@ -1,0 +1,129 @@
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #0e69e8;
+}
+
+.navbar li {
+    float: left;
+    border-right: 5px solid #dddddd;
+  }
+
+  #logo img {
+    height: 50px;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  #logo a {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  #logo {
+    margin: 0px;
+  }
+  
+  .navbar a {
+    display: block;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .navbar a:hover {
+    background-color: #111;
+  }
+
+  .dropdown{
+    float: left;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  .dropdown .dropbtn{
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+
+  .drop-content{
+    display: none;
+    position: absolute;
+    background-color: #0d6efd;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .drop-content a{
+    border-bottom: 1px solid #000;
+  }
+
+  .dropdown:hover .drop-content {
+    display: block;
+  }
+  h1, h2 {
+    padding-top: 50px;
+  }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  table td, table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  table tr:nth-child(even){background-color: #f2f2f2;}
+  
+  table tr:hover {background-color: #ddd;}
+  
+  table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0ea7e8;
+    color: white;
+  }
+
+  .container {
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form{
+    background-color: rgb(148, 211, 245);
+    border-radius: 5px;
+}
+.frm {
+    padding: 15px;
+    margin: 30px;
+    font-size: larger;
+}
+
+form a, button {
+    background-color: #0d6efd;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: larger;
+    text-decoration: none;
+  }
+
+select {
+    font-size: larger;
+}

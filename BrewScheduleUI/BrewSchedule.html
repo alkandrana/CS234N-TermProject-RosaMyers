@@ -6,34 +6,75 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Brew Scehdule</title>
         <link rel="stylesheet" type="text/css" href="brewschedule.css">
+        <script src="https://kit.fontawesome.com/c15e31b1d9.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <h1>Brew Schedule</h1>
-        <table>
-            <tr>
-                <th>Brew Name</th>
-                <th>Recipe</th>
-                <th>Ingredients</th>
-                <th>Product Inventory</th>
-                <th>Brew History</th>
-                <th>Container</th>
-            </tr>
-            <tr>
-                <td>Fuzzy Tales Juicy IPA</td>
-                <td>Fuzzy Tales Juicy IPA</td>
-                <td><a href="#">Ingredient List</a></td>
-                <td>0</td>
-                <td><a href="#">List of batches brewed previously</a></td>
-                <td>Large 10 Gallon</td>
-            </tr>
-        </table>
-        <h2>Schedule a Brew</h2>
-        <form method="post">
-            <label for="recipe">Recipe</label>
-            <select id="recipe" name="recipe">
-                <option value="">select a recipe</option>
-            </select>
-            
-        </form>
+        <ul class="navbar">
+            <li id="logo">
+                <a href="#"><img src="pics/transparentLogo.png"></a>
+            </li>
+            <li>
+                <a href="#">Sales Reserve</a>
+            </li>
+            <li>
+                <a href="#">Pub On Tap</a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Brews
+                    <i class="fa fa-caret-down"></i>
+                </a>
+                <div class="drop-content">
+                    <a href="BrewSchedule.html">Brew Schedule</a>
+                    <a href="#">Inventory</a>
+                    <a href="#">Brew History</a>
+                </div>
+            </li>
+        </ul><br>
+        <div class="container">
+            <h1>Brew Schedule</h1>
+            <table>
+                <tr>
+                    <th>Brew Name</th>
+                    <th>Recipe</th>
+                    <th>Ingredients</th>
+                    <th>Product Inventory</th>
+                    <th>Brew History</th>
+                    <th>Container</th>
+                </tr>
+                <tr>
+                    <td>Fuzzy Tales Juicy IPA</td>
+                    <td>Fuzzy Tales Juicy IPA</td>
+                    <td><a href="#">Ingredient List</a></td>
+                    <td>0</td>
+                    <td><a href="#">Table of batches brewed previously</a></td>
+                    <td>Large 10 Gallon</td>
+                </tr>
+                <tr>
+                    <td>Citra Motu Magic Haze</td>
+                    <td>Citra Motu Magic Haze</td>
+                    <td><a href="#">Ingredient List</a></td>
+                    <td>0</td>
+                    <td><a href="#">Table of batches brewed previously</a></td>
+                    <td>Large 10 Gallon</td>
+                </tr>
+            </table>
+            <h2>Schedule a Brew</h2>
+            <form method="post">
+                <label class="frm" for="recipe">Recipe</label>
+                <select class="frm" id="recipe" name="recipe">
+                    <option value="">select a recipe</option>
+                    <option value="3">Cascade Orange Pale Ale</option>
+                </select><br>
+                <label class="frm" for="ingredients">Ingredients</label>
+                <a href="#" class="frm">Link to table of ingredients for the recipe with on-hand quantity, on-order status, and reorder point</a><br>
+                <label class="frm" for="inventory">Product Inventory</label>
+                <input class="frm" type="number" id="inventory" name="inventory" value="0" readonly><br>
+                <label class="frm" for="history">Brew History</label>
+                <a href="#" class="frm">Link to table of previous batches that used this recipe</a><br>
+                <label class="frm" for="date">Date</label>
+                <input type="date" id="date" name="date" class="frm"><br>
+                <button type="submit">Add To Schedule</button>
+            </form>
+        </div>
     </body>
 </html>
